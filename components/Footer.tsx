@@ -10,8 +10,8 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="mb-6">
               <img 
-                className="h-12 w-auto mb-4" 
-                src="/site-images/nagel_nobg.png" 
+                className="h-32 w-auto mb-4 invert" 
+                src="nagel_nobg.png" 
                 alt="Nagel Controls Logo" 
               />
               <h3 className="text-xl font-bold mb-3">Nagel Controls</h3>
@@ -95,9 +95,8 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <div>
-                  <span className="text-slate-300">Brighton, MI</span>
+                  <span className="text-slate-300">1175 Rickett rd, Suite 1, Brighton, MI</span>
                   <br />
-                  <span className="text-slate-300">Tennessee (Coming Soon)</span>
                 </div>
               </div>
             </div>

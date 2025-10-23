@@ -133,8 +133,7 @@ function Contact() {
                                     <div>
                                         <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Visit Us</h3>
                                         <div className="text-slate-600 dark:text-slate-300">
-                                            <div>Brighton, MI</div>
-                                            <div>Tennessee (Coming Soon)</div>
+                                            <div>1175 Rickett rd, Suite 1, Brighton, MI</div>
                                         </div>
                                     </div>
                                 </div>
