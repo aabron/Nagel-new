@@ -4,7 +4,7 @@ const ServiceCard = ({ title, description, img, icon }: { title: string, descrip
   return (
     <div className="group bg-white rounded-2xl shadow-lg border border-slate-200 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 overflow-hidden dark:bg-gray-900 dark:border-gray-700 max-w-[400px]">
       {/* Image */}
-      <div className="relative lg:h-96 h-48 overflow-hidden">
+      <div className="relative lg:h-132 h-48 overflow-hidden">
         <img 
           src={img} 
           className='w-full h-full object-contain group-hover:scale-105 transition-transform duration-300' 
