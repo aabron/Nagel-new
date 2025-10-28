@@ -98,7 +98,7 @@ function Hero()
             </section>
             
             {/* About */}
-            <section id="about" className="py-20 bg-slate-50 dark:bg-gray-800">
+            <section id="about" className="py-20 bg-slate-50 dark:bg-gray-900">
                 <About/>
             </section> 
 

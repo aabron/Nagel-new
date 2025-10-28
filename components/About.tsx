@@ -64,7 +64,7 @@ const About = () => {
         </div>
 
         {/* Leadership Section */}
-        <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-12 dark:from-gray-900/95 dark:to-gray-800/95">
+        <div className="bg-gradient-to-r from-slate-100 to-blue-50 rounded-2xl p-8 lg:p-12 dark:from-gray-900/85 dark:to-gray-800/95">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-slate-900 mb-4 dark:text-white">Meet Our Founder</h3>
           </div>

@@ -78,19 +78,19 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
                             <div className="hidden md:flex items-center space-x-8">
                                 <a 
                                     href={isNotHome ? "/#services" : "#services"} 
-                                    className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
                                 >
                                     Services
                                 </a>
                                 <a 
                                     href={isNotHome ? "/#about" : "#about"} 
-                                    className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
                                 >
                                     About
                                 </a>
                                 <a 
                                     href={isNotHome ? "/#companies" : "#companies"} 
-                                    className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
                                 >
                                     Clients
                                 </a>
@@ -100,7 +100,7 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
                             <div className="flex items-center space-x-4">
                                 <Link
                                     href='/recent'
-                                    className="text-slate-600 hover:text-blue-600 font-medium transition-colors"
+                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
                                 >
                                     Projects
                                 </Link>
