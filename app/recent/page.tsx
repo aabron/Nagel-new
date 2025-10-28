@@ -20,7 +20,7 @@ function Recent() {
         },
         {
             title: "Permobil Wheelchair Assembly",
-            description: "This was a table created for PerMobil. The purpose was to measure the distance between the wheels in order to make sure that both wheels were straight. Otherwise the wheelchair would not move correctly. Using Keyence Vision cameras we created a setup where a vision camera measures the width between them and tells the operator whether or not is within acceptable margins.",
+            description: "This was a table created for PerMobil. The purpose was to measure the distance between the wheels in order to make sure that both wheels were straight. Otherwise the wheelchair would not move correctly. Using Keyence cameras we created a setup where a camera measures the width between them and tells the operator whether or not is within acceptable margins.",
             technologies: ["Keyence Vision Systems", "Quality Control", "Precision Measurement", "Assembly Automation"],
             images: ["20240208_141110.jpg"]
         },
@@ -32,7 +32,7 @@ function Recent() {
         },
         {
             title: "311D Sonic Welding",
-            description: "Two robot cells utilizing Fanuc robots to weld leather to plastic via sonic welding. The sonic welding is done via a Sonopet J2, the machine has been sent to Mexico for installation at Inoac.",
+            description: "Two robot cell utilizing Fanuc robots to weld leather to plastic via sonic welding. The sonic welding is done via a Sonopet J2, the machine has been sent to Mexico for installation at Inoac.",
             technologies: ["Fanuc Robotics", "Sonic Welding", "Sonopet J2", "Automated Welding"],
             images: ["IMG_9629.JPG"],
             videos: ["https://nagel-images.s3.us-east-1.amazonaws.com/8mb.video-4xe-sFKpjee3.mp4", "https://nagel-images.s3.us-east-1.amazonaws.com/IMG_9633.mp4"]
@@ -237,25 +237,6 @@ function Recent() {
                         </div>
                     </div>
 
-                    {/* Project Stats */}
-                    <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <div className="text-center p-6 bg-slate-50 dark:bg-gray-800 rounded-xl">
-                            <div className="text-3xl font-bold text-blue-600 mb-2">{projects.length}</div>
-                            <div className="text-sm text-slate-600 dark:text-slate-400">Featured Projects</div>
-                        </div>
-                        <div className="text-center p-6 bg-slate-50 dark:bg-gray-800 rounded-xl">
-                            <div className="text-3xl font-bold text-blue-600 mb-2">100%</div>
-                            <div className="text-sm text-slate-600 dark:text-slate-400">Success Rate</div>
-                        </div>
-                        <div className="text-center p-6 bg-slate-50 dark:bg-gray-800 rounded-xl">
-                            <div className="text-3xl font-bold text-blue-600 mb-2">6</div>
-                            <div className="text-sm text-slate-600 dark:text-slate-400">Industries Served</div>
-                        </div>
-                        <div className="text-center p-6 bg-slate-50 dark:bg-gray-800 rounded-xl">
-                            <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-                            <div className="text-sm text-slate-600 dark:text-slate-400">Years Experience</div>
-                        </div>
-                    </div>
                 </div>
             </section>
 

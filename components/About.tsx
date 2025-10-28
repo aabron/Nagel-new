@@ -10,7 +10,7 @@ const About = () => {
             About <span className="text-blue-600">Nagel Controls</span>
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Re-envisioning controls engineering with innovative solutions and proven expertise.
+            It's important to know who you are working with. Here's a little bit about us.
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const About = () => {
                 high-quality controls solutions and professional panel building.
               </p>
               <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                Our expertise spans all major platforms and specifications - ABB, Siemens, and beyond. 
+                Our expertise spans all major platforms and specifications - Allen Bradley, Siemens, and beyond. 
                 We're expanding our services into tool building and design, always pushing the boundaries 
                 of what's possible in controls engineering.
               </p>
@@ -36,13 +36,13 @@ const About = () => {
 
             {/* Features Grid */}
             <div className="grid grid-cols-2 gap-6 pt-6">
-              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-200 dark:bg-gray-900 dark:border-gray-700">
                 <div className="text-3xl font-bold text-blue-600 mb-2">15+ Years</div>
-                <div className="text-sm text-slate-600">of panel building experience, programming, and troubleshooting.</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">of panel building experience, programming, and troubleshooting.</div>
               </div>
-              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-200 dark:bg-gray-900 dark:border-gray-700">
                 <div className="text-3xl font-bold text-blue-600 mb-2">Multiple Processors</div>
-                <div className="text-sm text-slate-600">We have experience with multiple PLC processors and HMI systems.</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">We have experience with multiple PLC processors and HMI systems.</div>
               </div>
             </div>
           </div>
@@ -64,13 +64,13 @@ const About = () => {
         </div>
 
         {/* Leadership Section */}
-        <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-12">
+        <div className="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-12 dark:from-gray-900/95 dark:to-gray-800/95">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-slate-900 mb-4">Meet Our Founder</h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-4 dark:text-white">Meet Our Founder</h3>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-lg border border-slate-200">
+            <div className="bg-white rounded-xl p-8 shadow-lg border border-slate-200 dark:bg-gray-900 dark:border-gray-700">
               <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-6 lg:space-y-0 lg:space-x-8">
                 {/* Avatar placeholder */}
                 <div className="flex-shrink-0">
@@ -81,9 +81,9 @@ const About = () => {
                 
                 {/* Content */}
                 <div className="flex-1 text-center lg:text-left">
-                  <h4 className="text-2xl font-bold text-slate-900 mb-2">Richard Nagel</h4>
+                  <h4 className="text-2xl font-bold text-slate-900 mb-2 dark:text-white">Richard Nagel</h4>
                   <p className="text-blue-600 font-medium mb-4">Owner & Operator</p>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed dark:text-slate-300">
                     With over 15 years in the industry, Richard brings a passion for providing solutions to complex problems. 
                     At Nagel Controls, we aim to re-envision how things are done in the controls world and pave our own path 
                     with new ideas and innovative methods.

@@ -42,9 +42,13 @@ const CompanyLogos = () => {
       src: 'https://i0.wp.com/www.intevaproducts.com/wp-content/uploads/2025/06/inteva-logo.png?fit=1200%2C247&ssl=1',
       alt: 'Inteva',
       name: 'DMS'
+    },
+    {
+      src: 'https://mc3michigan.org/wp-content/uploads/elementor/thumbs/MC3-logo-RGB_color-r7i41gnob0sdvueqvzhbww3eruhur0caityonkyfoi.png',
+      alt: 'MC3',
+      name: 'MC3'
     }
   ];
-
   return (
     <div className="py-12">
       <div className="container mx-auto px-6">
@@ -53,12 +57,12 @@ const CompanyLogos = () => {
           {companyLogos.map((company, index) => (
             <div 
               key={index} 
-              className="flex items-center justify-center p-6 bg-white rounded-xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-200 transition-all duration-300 min-h-[100px] max-w-[200px] max-h-[150px]"
+              className="flex items-center justify-center p-6 bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-slate-200 hover:shadow-lg hover:border-blue-200 transition-all duration-300 min-h-[100px] max-w-[200px] max-h-[150px]"
             >
               <img 
                 src={company.src} 
                 alt={`${company.name} logo`} 
-                className={`max-w-full max-h-28 w-auto h-[100px] object-contain transition-all duration-300 ${company.name === 'Treetown Tech' || company.name === 'Stellantis' || company.name === 'DMS' ? 'invert' : ''}`}
+                className={`max-w-full max-h-28 w-auto h-[100px] object-contain transition-all duration-300 ${company.name === 'Treetown Tech' || company.name === 'Stellantis' || company.name === 'DMS' ? 'invert dark:invert-0' : ''}`}
               />
             </div>
           ))}
@@ -127,24 +131,6 @@ const CompanyLogos = () => {
           </div>
         </div> */}
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Let's discuss how we can help optimize your operations with our proven controls engineering solutions.
-            </p>
-            <a 
-              href="/contact"
-              className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors"
-            >
-              Start Your Project
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

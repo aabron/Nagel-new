@@ -28,7 +28,7 @@ function Hero()
         <Navbar/>
         <div id='sections' className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+            <section className="relative bg-slate-50 dark:bg-gray-900">
                 <div className="container mx-auto px-6 py-20 lg:py-28">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Content */}
@@ -40,8 +40,7 @@ function Hero()
                                     <span className="text-slate-600 dark:text-slate-300">Solutions</span>
                                 </h1>
                                 <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-                                    At Nagel Controls, we forge tailored solutions, from bespoke toolcraft to PLC mastery. 
-                                    Whatever the problem is, we'll find the solution.
+                                Nagel Controls transforms your operations, from essential production support to cutting-edge automation solutions.
                                 </p>
                             </div>
                             
@@ -94,7 +93,7 @@ function Hero()
             </section>
     
             {/* Services Section */}
-            <section id="services" className="py-20 bg-white dark:bg-gray-900">
+            <section id="services" className="py-20 bg-slate-50 dark:bg-gray-900">
                 <ServicesSection/>
             </section>
             
@@ -104,7 +103,7 @@ function Hero()
             </section> 
 
             {/* Companies Section*/}
-            <section id='companies' className="py-20 bg-white dark:bg-gray-900">
+            <section id='companies' className="py-20 bg-slate-50 dark:bg-gray-900">
               <div className="container mx-auto text-center mb-12">
                   <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Trusted by Industry Leaders</h2>
                   <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">

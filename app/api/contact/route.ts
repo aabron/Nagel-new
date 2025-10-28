@@ -8,14 +8,12 @@ export async function POST(req: Request) {
         if (!firstName || !lastName || !company || !email || !phoneNumber) {
             return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
         }
-
+        // console.log(process.env.SMTP_HOST, process.env.SMTP_PORT, process.env.SMTP_SECURE, process.env.SMTP_USER, process.env.SMTP_PASS);
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT || 587),
-            secure: process.env.SMTP_SECURE === 'true',
+            service: "gmail",
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_PASS,
             },
             tls: { ciphers: 'TLSv1.2' },
         });

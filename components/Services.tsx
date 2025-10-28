@@ -2,12 +2,12 @@ import React from 'react';
 
 const ServiceCard = ({ title, description, img, icon }: { title: string, description: string, img: string, icon: string }) => {
   return (
-    <div className="group bg-white rounded-2xl shadow-lg border border-slate-200 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 overflow-hidden">
+    <div className="group bg-white rounded-2xl shadow-lg border border-slate-200 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 overflow-hidden dark:bg-gray-900 dark:border-gray-700 max-w-[400px]">
       {/* Image */}
-      <div className="relative lg:h-max h-48 overflow-hidden">
+      <div className="relative lg:h-96 h-48 overflow-hidden">
         <img 
           src={img} 
-          className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300' 
+          className='w-full h-full object-contain group-hover:scale-105 transition-transform duration-300' 
           alt={`${title} service`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -19,9 +19,9 @@ const ServiceCard = ({ title, description, img, icon }: { title: string, descrip
           <div className="p-3 bg-blue-100 rounded-lg mr-4">
             <div className="text-blue-600 text-xl">{icon}</div>
           </div>
-          <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
         </div>
-        <p className='text-slate-600 leading-relaxed'>{description}</p>
+        <p className='text-slate-600 leading-relaxed dark:text-slate-300'>{description}</p>
         
         {/* Learn More Link */}
         {/* <div className="mt-6">
@@ -40,33 +40,35 @@ const ServiceCard = ({ title, description, img, icon }: { title: string, descrip
 const ServicesSection = () => {
   const services = [
     {
-      title: 'PLC Issue Diagnosis',
-      description: 'Expert solutions in PLC issue diagnosis, debugging, and resolution. We troubleshoot complex automation systems to get your operations back online quickly.',
+      title: 'Poka Yoke and Vision Systems',
+      description: 'Error-proofing systems engineered for accuracy, consistency, and quality assurance.',
       img: '20240208_141110.jpg',
       icon: '🔧'
     },
     {
-      title: 'Seamless Installation',
-      description: 'Adept team excelling in seamless installation and proficient tool building. From concept to completion, we ensure smooth implementation.',
+      title: 'Seamless Automation',
+      description: 'Fully integrated automation systems built for performance and reliability.',
       img: 'machine.jpg',
       icon: '⚙️'
     },
     {
-      title: 'Panel Building & Programming',
-      description: 'Building and wiring of control panels for various industrial applications. Complete with custom programming solutions for your specific needs.',
+      title: 'Panel Building',
+      description: 'We provide turnkey panel building solutions, from schematic design to final assembly.',
       img: 'cabinet.jpg',
       icon: '🔌'
     },
-    // {
-    //   title: 'PLC Issue Diagnosis',
-    //   description: 'Expert solutions in PLC issue diagnosis, debugging, and resolution.',
-    //   img: '/site-images/slide1.jpg',
-    // },
-    // {
-    //   title: 'Seamless Installation',
-    //   description: 'Adept team excelling in seamless installation and proficient tool building.',
-    //   img: '/site-images/slide2.jpg',
-    // },
+    {
+      title: 'PLC and HMI Programming',
+      description: 'From logic to interface, we build complete PLC and HMI solutions built for performance and ease of use.',
+      img: 'Capture.PNG',
+      icon: '💻'
+    },
+    {
+      title: 'Robot Programming',
+      description: 'End-to-end robot programming, from setup to system optimization.',
+      img: 'IMG_0493.jpeg',
+      icon: '🤖'
+    },
     // {
     //   title: 'Automation Solutions',
     //   description: 'Introducing end-to-end automation solutions for factory operations.',
@@ -83,12 +85,12 @@ const ServicesSection = () => {
             Our <span className="text-blue-600">Services</span>
           </h2>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            We provide comprehensive controls engineering solutions tailored to your industrial automation needs.
+          We build solutions that make automation simple, effective, and perfectly suited to your operation.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -100,7 +102,7 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
@@ -117,7 +119,7 @@ const ServicesSection = () => {
               </svg>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

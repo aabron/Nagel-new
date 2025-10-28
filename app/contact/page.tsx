@@ -119,7 +119,7 @@ function Contact() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Call Us</h3>
-                                        <span className="text-slate-600 dark:text-slate-300">+1 (248) 123-4567</span>
+                                        <span className="text-slate-600 dark:text-slate-300">+1 (517) 499 7264</span>
                                     </div>
                                 </div>
 
