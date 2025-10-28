@@ -21,7 +21,7 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
                             <Link href="/" className="flex items-center">
                                 <img 
                                     className="h-12 w-auto" 
-                                    src="/site-images/nagel_nobg.png" 
+                                    src="nagel_nobg.png" 
                                     alt="Nagel Controls Logo" 
                                 />
                             </Link>
@@ -44,7 +44,7 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
                         {isMenuOpen && (
                             <div className="pb-6 space-y-3">
                                 <Link
-                                    href='/recent-projects'
+                                    href='/recent'
                                     className="block text-center py-3 px-4 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
                                     onClick={handleMenuToggle}
                                 >
