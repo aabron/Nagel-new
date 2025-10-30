@@ -11,10 +11,9 @@ const Footer = () => {
             <div className="mb-6">
               <img 
                 className="h-32 w-auto mb-4 invert" 
-                src="nagel_nobg.png" 
+                src="Nagel_Controls-removebg-preview.png" 
                 alt="Nagel Controls Logo" 
               />
-              <h3 className="text-xl font-bold mb-3">Nagel Controls</h3>
               <p className="text-slate-300 leading-relaxed max-w-md">
                 Re-envisioning controls engineering with innovative solutions and proven expertise. 
                 Serving the Detroit area and beyond with professional automation solutions.

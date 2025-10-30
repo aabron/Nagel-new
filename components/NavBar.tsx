@@ -11,7 +11,7 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 dark:bg-gray-900/95 dark:border-gray-700">
+        <nav className="sticky top-0 z-50 bg-white/75 backdrop-blur-lg border-b border-slate-200 dark:bg-gray-900/75 dark:border-gray-700">
             <div className="container mx-auto px-6">
                 {isMobile ? (
                     <>
@@ -20,8 +20,8 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
                             {/* Logo */}
                             <Link href="/" className="flex items-center">
                                 <img 
-                                    className="h-12 w-auto" 
-                                    src="nagel_nobg.png" 
+                                    className="h-20 w-auto dark:invert" 
+                                    src="Nagel_Controls-removebg-preview.png" 
                                     alt="Nagel Controls Logo" 
                                 />
                             </Link>
@@ -66,8 +66,8 @@ const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
                             <img 
-                                className="h-16 w-auto" 
-                                src="nagel_nobg.png" 
+                                className="h-24 w-auto dark:invert" 
+                                src="Nagel_Controls-removebg-preview.png" 
                                 alt="Nagel Controls Logo" 
                             />
                         </Link>
