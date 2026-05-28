@@ -1,128 +1,138 @@
-import React from 'react';
+import React from "react";
 
-const ServiceCard = ({ title, description, img, icon }: { title: string, description: string, img: string, icon: string }) => {
-  return (
-    <div className="group bg-white rounded-2xl shadow-lg border border-slate-200 hover:shadow-2xl hover:border-blue-200 transition-all duration-300 overflow-hidden dark:bg-gray-900 dark:border-gray-700 max-w-[400px]">
-      {/* Image */}
-      <div className="relative lg:h-132 h-48 overflow-hidden">
-        <img 
-          src={img} 
-          className='w-full h-full object-contain group-hover:scale-105 transition-transform duration-300' 
-          alt={`${title} service`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-      </div>
-      
-      {/* Content */}
-      <div className="p-6">
-        <div className="flex items-center mb-4">
-          <div className="p-3 bg-blue-100 rounded-lg mr-4">
-            <div className="text-blue-600 text-xl">{icon}</div>
-          </div>
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
-        </div>
-        <p className='text-slate-600 leading-relaxed dark:text-slate-300'>{description}</p>
-        
-        {/* Learn More Link */}
-        {/* <div className="mt-6">
-          <button className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors">
-            Learn More
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div> */}
-      </div>
-    </div>
-  );
+type Service = {
+  title: string;
+  sub: string;
+  icon: React.ReactNode;
+  img: string;
 };
 
-const ServicesSection = () => {
-  const services = [
-    {
-      title: 'Poka Yoke and Vision Systems',
-      description: 'Error-proofing systems engineered for accuracy, consistency, and quality assurance.',
-      img: '20240208_141110.jpg',
-      icon: '🔧'
-    },
-    {
-      title: 'Seamless Automation',
-      description: 'Fully integrated automation systems built for performance and reliability.',
-      img: 'machine.jpg',
-      icon: '⚙️'
-    },
-    {
-      title: 'Panel Building',
-      description: 'We provide turnkey panel building solutions, from schematic design to final assembly.',
-      img: 'cabinet.jpg',
-      icon: '🔌'
-    },
-    {
-      title: 'PLC and HMI Programming',
-      description: 'From logic to interface, we build complete PLC and HMI solutions built for performance and ease of use.',
-      img: 'Capture.PNG',
-      icon: '💻'
-    },
-    {
-      title: 'Robot Programming',
-      description: 'End-to-end robot programming, from setup to system optimization.',
-      img: 'IMG_0493.jpeg',
-      icon: '🤖'
-    },
-    // {
-    //   title: 'Automation Solutions',
-    //   description: 'Introducing end-to-end automation solutions for factory operations.',
-    //   img: '/site-images/slide3.jpg',
-    // },
-  ];
+const stroke = {
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
 
+const services: Service[] = [
+  {
+    title: "Poka Yoke & Vision Systems",
+    sub: "Error-proofing for accuracy and quality",
+    icon: (
+      <svg viewBox="0 0 24 24" width="15" height="15" {...stroke}>
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="m15 9 3-3" />
+      </svg>
+    ),
+    img: "20240208_141110.jpg"
+  },
+  {
+    title: "Seamless Automation",
+    sub: "Integrated systems built for reliability",
+    icon: (
+      <svg viewBox="0 0 24 24" width="15" height="15" {...stroke}>
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09c0 .66.39 1.26 1 1.51.61.26 1.31.12 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82c.25.61.85 1 1.51 1H21a2 2 0 0 1 0 4h-.09c-.66 0-1.26.39-1.51 1z" />
+      </svg>
+    ),
+    img: "machine.jpg"
+  },
+  {
+    title: "Panel Building",
+    sub: "Turnkey, schematic to final assembly",
+    icon: (
+      <svg viewBox="0 0 24 24" width="15" height="15" {...stroke}>
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18" />
+        <path d="M9 21V9" />
+      </svg>
+    ),
+    img: "cabinet.jpg"
+  },
+  {
+    title: "PLC & HMI Programming",
+    sub: "Logic and interface built to perform",
+    icon: (
+      <svg viewBox="0 0 24 24" width="15" height="15" {...stroke}>
+        <rect x="5" y="5" width="14" height="14" rx="2" />
+        <rect x="9" y="9" width="6" height="6" />
+        <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" />
+      </svg>
+    ),
+    img: "Capture.PNG"
+  },
+  {
+    title: "Robot Programming",
+    sub: "End-to-end setup and optimization",
+    icon: (
+      <svg viewBox="0 0 24 24" width="15" height="15" {...stroke}>
+        <rect x="4" y="8" width="16" height="12" rx="2" />
+        <path d="M12 2v4" />
+        <circle cx="9" cy="14" r="1.2" />
+        <circle cx="15" cy="14" r="1.2" />
+        <path d="M9 18h6" />
+      </svg>
+    ),
+    img: "IMG_0493.jpeg"
+  },
+];
+
+const Services = () => {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            Our <span className="text-blue-600">Services</span>
-          </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-          We build solutions that make automation simple, effective, and perfectly suited to your operation.
-          </p>
-        </div>
+    <section
+      id="services"
+      className="border-b border-black"
+      style={{ borderBottomWidth: "1.5px" }}
+    >
+      {/* Header */}
+      <div
+        className="flex justify-between items-baseline border-b border-[var(--rule)]"
+        style={{ padding: "36px 36px 28px" }}
+      >
+        <span className="section-eyebrow">What we do</span>
+        <span className="text-[11px] text-[#ccc] font-mono">
+          0{services.length} services
+        </span>
+      </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row lg:flex-wrap lg:justify-center gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              img={service.img}
-              icon={service.icon}
-            />
-          ))}
-        </div>
+      {/* Grid */}
+      <div
+        className="services-grid-5 grid"
+        style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
+      >
+        {services.map((s, i) => (
+          <div
+            key={s.title}
+            className={`p-[28px_22px] hover:bg-[var(--cream-3)] transition-colors ${i < services.length - 1
+              ? "border-r border-[var(--rule)]"
+              : ""
+              }`}
+          >
 
-        {/* CTA Section
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Need a Custom Solution?</h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Every project is unique. Let us design a custom controls engineering solution that perfectly fits your requirements.
-            </p>
-            <a 
-              href="/contact"
-              className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors"
-            >
-              Get Custom Quote
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            <div className="flex items-center justify-between flex-row gap-2">
+              <div className="font-mono text-[10px] text-[#bbb] mb-6">
+                0{i + 1}
+              </div>
+              <div className="w-[34px] h-[34px] border border-[#ddd] rounded-[7px] flex items-center justify-center mb-[14px] text-[#555]">
+                {s.icon}
+              </div>
+            </div>
+            <div className="w-full h-[250px] mb-5">
+              <img src={s.img} alt={s.title} className="w-full h-full object-cover rounded-lg" />
+            </div>
+            <div className="text-[12px] font-medium text-[var(--ink-soft)] leading-[1.4]">
+              {s.title}
+            </div>
+            <div className="text-[11px] text-[#bbb] mt-1 leading-[1.5]">
+              {s.sub}
+            </div>
           </div>
-        </div> */}
+        ))}
       </div>
     </section>
   );
 };
 
-export default ServicesSection;
+export default Services;

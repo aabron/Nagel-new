@@ -1,123 +1,141 @@
+'use client';
+
 import React, { useState } from "react";
-// import DarkModeToggle from "../DarkModeToggle";
 import Link from "next/link";
-import { isMobile } from "react-device-detect";
 
-const Navbar = ({ isNotHome }: { isNotHome?: boolean }) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+type NavBarProps = {
+  isNotHome?: boolean;
+};
 
-    const handleMenuToggle = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+const NavBar = ({ isNotHome }: NavBarProps) => {
+  const [open, setOpen] = useState(false);
 
-    return (
-        <nav className="sticky top-0 z-50 bg-white/75 backdrop-blur-lg border-b border-slate-200 dark:bg-gray-900/75 dark:border-gray-700">
-            <div className="container mx-auto px-6">
-                {isMobile ? (
-                    <>
-                        {/* Mobile Layout */}
-                        <div className="flex items-center justify-between h-20">
-                            {/* Logo */}
-                            <Link href="/" className="flex items-center">
-                                <img 
-                                    className="h-20 w-auto dark:invert" 
-                                    src="Nagel_Controls-removebg-preview.png" 
-                                    alt="Nagel Controls Logo" 
-                                />
-                            </Link>
-                            
-                            {/* Mobile Menu Button */}
-                            <button
-                                onClick={handleMenuToggle}
-                                className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-gray-800 transition-colors"
-                                aria-label="Toggle menu"
-                            >
-                                <div className="space-y-1.5">
-                                    <div className={`w-6 h-0.5 bg-slate-700 dark:bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-                                    <div className={`w-6 h-0.5 bg-slate-700 dark:bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-                                    <div className={`w-6 h-0.5 bg-slate-700 dark:bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
-                                </div>
-                            </button>
-                        </div>
+  const sectionHref = (id: string) => (isNotHome ? `/#${id}` : `#${id}`);
 
-                        {/* Mobile Dropdown Menu */}
-                        {isMenuOpen && (
-                            <div className="pb-6 space-y-3">
-                                <Link
-                                    href='/recent'
-                                    className="block text-center py-3 px-4 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
-                                    onClick={handleMenuToggle}
-                                >
-                                    Recent Projects
-                                </Link>
-                                <Link
-                                    href='/contact'
-                                    className="block text-center py-3 px-4 rounded-lg bg-slate-100 text-slate-700 font-medium hover:bg-slate-200 transition-colors dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
-                                    onClick={handleMenuToggle}
-                                >
-                                    Contact Us
-                                </Link>
-                            </div>
-                        )}
-                    </>
-                ) : (
-                    /* Desktop Layout */
-                    <div className="flex items-center justify-between h-20">
-                        {/* Logo */}
-                        <Link href="/" className="flex items-center">
-                            <img 
-                                className="h-24 w-auto dark:invert" 
-                                src="Nagel_Controls-removebg-preview.png" 
-                                alt="Nagel Controls Logo" 
-                            />
-                        </Link>
+  const links = [
+    { label: "Services", href: sectionHref("services") },
+    { label: "About", href: sectionHref("about") },
+    { label: "Projects", href: "/recent" },
+    { label: "Clients", href: sectionHref("clients") },
+  ];
 
-                        {/* Desktop Navigation */}
-                        <div className="flex items-center space-x-6">
-                            {/* Navigation Links */}
-                            <div className="hidden md:flex items-center space-x-8">
-                                <a 
-                                    href={isNotHome ? "/#services" : "#services"} 
-                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
-                                >
-                                    Services
-                                </a>
-                                <a 
-                                    href={isNotHome ? "/#about" : "#about"} 
-                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
-                                >
-                                    About
-                                </a>
-                                <a 
-                                    href={isNotHome ? "/#companies" : "#companies"} 
-                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
-                                >
-                                    Clients
-                                </a>
-                            </div>
+  return (
+    <nav
+      className="relative flex items-center justify-between bg-cream border-b border-black"
+      style={{ padding: "20px 36px", borderBottomWidth: "1.5px" }}
+    >
+      {/* Logo */}
+      <Link
+        href="/"
+        className="text-[12px] font-medium text-black tracking-[0.08em] uppercase"
+      >
+        <img src="Nagel_Controls-removebg-preview.png"  alt="Nagel Controls" className="w-[150px] h-full" />
+      </Link>
 
-                            {/* Action Buttons */}
-                            <div className="flex items-center space-x-4">
-                                <Link
-                                    href='/recent'
-                                    className="text-slate-600 dark:text-slate-300 hover:text-blue-600 font-medium transition-colors"
-                                >
-                                    Projects
-                                </Link>
-                                <Link
-                                    href='/contact'
-                                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors justify-center inline-flex items-center justify-center"
-                                >
-                                    Get Quote
-                                </Link>
-                                {/* <DarkModeToggle /> */}
-                            </div>
-                        </div>
-                    </div>
-                )}
+      {/* Desktop nav */}
+      <div className="hidden md:flex items-center gap-8">
+        {links.map((l) =>
+          l.href.startsWith("/") && !l.href.startsWith("/#") ? (
+            <Link
+              key={l.label}
+              href={l.href}
+              className="text-[12px] text-[#888] hover:text-black transition-colors"
+            >
+              {l.label}
+            </Link>
+          ) : (
+            <a
+              key={l.label}
+              href={l.href}
+              className="text-[12px] text-[#888] hover:text-black transition-colors"
+            >
+              {l.label}
+            </a>
+          )
+        )}
+      </div>
+
+      {/* Right side */}
+      <div className="hidden md:flex items-center gap-4">
+        <a
+          href="tel:+15174997264"
+          className="text-[11px] text-[#aaa] hover:text-black transition-colors"
+        >
+          (517) 499-7264
+        </a>
+        <Link
+          href="/contact"
+          className="text-[11px] bg-black text-cream font-medium rounded-[4px] hover:opacity-90 transition-opacity"
+          style={{ padding: "8px 18px" }}
+        >
+          Get a Quote
+        </Link>
+      </div>
+
+      {/* Mobile menu trigger */}
+      <button
+        type="button"
+        aria-label="Toggle menu"
+        onClick={() => setOpen((v) => !v)}
+        className="md:hidden inline-flex items-center justify-center w-8 h-8 rounded-[4px] border border-[#ddd]"
+      >
+        <div className="flex flex-col gap-[3px]">
+          <span
+            className={`block w-4 h-[1.5px] bg-black transition-transform ${
+              open ? "translate-y-[5px] rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`block w-4 h-[1.5px] bg-black transition-opacity ${
+              open ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`block w-4 h-[1.5px] bg-black transition-transform ${
+              open ? "-translate-y-[5px] -rotate-45" : ""
+            }`}
+          />
+        </div>
+      </button>
+
+      {/* Mobile dropdown */}
+      {open && (
+        <div
+          className="md:hidden absolute left-0 right-0 top-full bg-cream border-b border-black z-50"
+          style={{ borderBottomWidth: "1.5px" }}
+        >
+          <div className="flex flex-col">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="text-[12px] text-[#555] hover:text-black px-9 py-4 border-t border-[var(--rule-soft)]"
+              >
+                {l.label}
+              </a>
+            ))}
+            <div className="px-9 py-4 flex items-center justify-between border-t border-[var(--rule-soft)]">
+              <a
+                href="tel:+15174997264"
+                className="text-[11px] text-[#888]"
+              >
+                (517) 499-7264
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="text-[11px] bg-black text-cream font-medium rounded-[4px]"
+                style={{ padding: "8px 18px" }}
+              >
+                Get a Quote
+              </Link>
             </div>
-        </nav>
-    );
-}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
 
-export default Navbar;
+export default NavBar;
