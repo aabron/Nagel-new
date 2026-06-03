@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
-import Ticker from "@/components/Ticker";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Companies from "@/components/Companies";
